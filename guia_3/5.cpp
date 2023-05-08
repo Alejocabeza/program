@@ -1,5 +1,6 @@
 /* Una persona que va de compras a la tienda “Enano, S.A.”, decide llevar un control sobre lo que va comprando, para saber la cantidad de dinero que tendrá que pagar al llegar a la caja. La tienda tiene una promoción del 20% de descuento sobre aquellos artículos cuya etiqueta sea roja. Determinar la cantidad de dinero que esta persona deberá pagar.  */
 #include <iostream>
+#include <ostream>
 using namespace std;
 int main()
 {
@@ -21,11 +22,15 @@ int main()
             cuenta += precio;
         }
         if(type != 1 && type != 2) {
-            cout << "Por favor ingrese numeros validos";
+            cout << "Por favor ingrese numeros validos" << endl;
             break;
         }
         index++;
     } while(index <= cantidad);
-    cout << "Tienes que pagar " << cuenta << " Bs";
+    if(cuenta > 0) {
+        cout << "Tienes que pagar " << cuenta << " Bs";
+    }else{
+        cout << "Ejecute de nuevo el proceso";
+    }
     return 0;
 }
